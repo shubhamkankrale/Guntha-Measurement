@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset = "UTF-8">
+        <title>
+            Calculator
+        </title>
+        <br>
+        <hr>
+        <marquee style = "color:yellow;">
+            This Website Is For Measuring Your Farm/Plots In Gunthas/ ही वेबसाईट तुमची शेती किवा प्लॉट्स गुंठे मोजण्यासाठी आहे.
+        </marquee>
+        <hr>
+        <h1 align = center style = "color:skyblue;">-: Guntha :-</h1>
+        <hr>
+        <p align = center style = "color:orange;">You Just Fill The Values In Feets / तुम्ही फक्त फुट 
+            मध्ये मूल्ये भरा.</p>
+        <br>
+    </head>
+    <body style="background-color:black;">
+        <div class ="row">
+            <div class="col-12">
+        <form method = "post" align = center style="color:Red;">
+            {% csrf_token %}
+            <label>Front Side:-</label>
+            <input type="text" name = "Num1" class = "form-control"> <label> -:पुढील बाजू<label><br><br>
+            <label>Back Side:-</label>
+            <input type = "text" name = "Num2" class = "form - control"> <label> -:मागील बाजू<label><br><br>
+            <label>Left Side:-</label>
+            <input type = "text" name = "Num3" class = "form - control"><label> -:डावी बाजू<label><br><br>
+            <label>Right Side:-</label>
+            <input type = "text" name = "Num4" class = "form - control"> <label> -:उजवी बाजू<label><br><br>
+            <button type="submit" style="color:Green;">Calculate/मोजा</button><br><br><br>
+            <hr>
+            <label style = "color:orange;">Result/
+                निकाल:-</label>
+            <input type ="text" value = "{{c}}" class = "form - control"><br><br>
+            <label style="color:red">This Result Is In Gunthas. (हा निकाल गुंठेवारीत लागला आहे.)</label>
+            
+            
+            <hr>
+            <br>
+            <br>
+            <br>
+            <h4 align = center style = "color:white;">Presented by: Sam Kankrale</h4>
+        </form>
+        </div>
+            </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
