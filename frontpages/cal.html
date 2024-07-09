@@ -1,63 +1,112 @@
 <!DOCTYPE html>
-<html>
-    <head>
-
-        <meta charset = "UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title>
-            Guntha.com
-        </title>
-        <br>
-        <hr>
-        <marquee style = "color:yellow;">
-            This Website Is For Measuring Your Farm/Plots In Gunthas/ ही वेबसाईट तुमची शेती किवा प्लॉट्स गुंठे मोजण्यासाठी आहे.
-        </marquee>
-        <hr>
-        <h1 align = center style = "color:skyblue;">-: Guntha :-</h1>
-        <hr>
-        <p align = center style = "color:orange;">You Just Fill The Values In Feets / तुम्ही फक्त फुट 
-            मध्ये मूल्ये भरा.</p>
-        <br>
-    </head>
-    <body style="background-color:black;">
-        <div class ="row">
-            <div class="col-12">
-        <form method = "post" align = center style="color:Red;">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guntha.com</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            background-image: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        p {
+            text-align: center;
+            color: red;
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        form {
+            text-align: center;
+        }
+        .label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 180px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .result label {
+            font-weight: bold;
+            color: #333;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>-: Guntha Calculator :-</h1>
+        <p>ही वेबसाईट तुमची शेती किवा प्लॉट्स, गुंठे मोजण्यासाठी आहे.</p>
+        <p>Enter dimensions in feet / फुट मध्ये माप भरा.</p>
+        <form method="post">
             {% csrf_token %}
-            <label>Front Side:-</label>
-            <input type="text" name = "Num1" class = "form-control"> <label> -:पुढील बाजू<label><br><br>
-            <label>Back Side:-</label>
-            <input type = "text" name = "Num2" class = "form - control"> <label> -:मागील बाजू<label><br><br>
-            <label>Left Side:-</label>
-            <input type = "text" name = "Num3" class = "form - control"><label> -:डावी बाजू<label><br><br>
-            <label>Right Side:-</label>
-            <input type = "text" name = "Num4" class = "form - control"> <label> -:उजवी बाजू<label><br><br>
-            <button type="submit" style="color:Green;">Calculate/मोजा</button><br><br><br>
-            <hr>
-            <label style = "color:orange;">Result/
-                निकाल:-</label>
-            <input type ="text" value = "{{c}}" class = "form - control"><br><br>
-            <label style="color:red">This Result Is In Gunthas. (हा निकाल गुंठेवारीत लागला आहे.)</label>
-            
-            
-            <hr>
-            <br>
-            <br>
-            <br>
-            <h4 align = center style = "color:white;">Presented by: Sam Kankrale</h4>
-        </form>
-        </div>
+            <label class="label">पुढील बाजू / Front Side:</label>
+            <input type="text" name="Num1"><br><br>
+            <label class="label">मागील बाजू / Back Side:</label>
+            <input type="text" name="Num2"><br><br>
+            <label class="label">डावी बाजू / Left Side:</label>
+            <input type="text" name="Num3"><br><br>
+            <label class="label">उजवी बाजू / Right Side:</label>
+            <input type="text" name="Num4"><br><br>
+            <button type="submit">मोजा / Calculate</button>
+            <div class="result">
+                <label class="label">निकाल / Result:</label>
+                <input type="text" value="{{c}}">
+                <br>
+                <label>हा निकाल गुंठेवारीत आहे. / This Result Is In Gunthas.</label>
             </div>
-    </body>
+        </form>
+        <div class="footer">
+            <p>Presented by: Sam Kankrale</p>
+        </div>
+    </div>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
